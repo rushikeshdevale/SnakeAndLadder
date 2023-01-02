@@ -3,7 +3,7 @@ package com.snkLadder;
 public class SnakeAndLadder {
     public static void main(String[] args) {
         int position = 0;
-        System.out.println("Welcome into Snake and Ladder program !!");
+        System.out.println("Welcome into Snake and Ladder program !! ");
         System.out.println("position is " + position);
         int diceValue = (int) (Math.random() * 10) % 6 + 1;
         Utility utility = new Utility();
@@ -27,7 +27,10 @@ class Utility {
 
                 case 2:
                     position = (position + diceValue);
-
+                    if (position > 100) {
+                        position = (position - diceValue);
+                        continue;
+                    }
                     System.out.println("your position after ladder is :" + position);
                     break;
 
